@@ -21,6 +21,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '15'
+          postgresql db: aulasSolid
+          postgresql user: postgres
+          postgresql password: 601034
+
       - name: compliacao
         run: mvn -B package --file pom.xml -DskipTests
 
